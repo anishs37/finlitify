@@ -38,21 +38,29 @@ const MenuPage1 = () => {
   };
 
   const handleNextQuestion = () => {
-    // Move to the next question
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
-
-    // If there is a next question at the same level, show it
-    const { level } = currentQuestion.data;
-    if (level) {
-      const levelQuestions = Object.values(taxQuestions).filter((q) => q.level === level && q.key !== currentQuestion.key);
-      const randomQuestion = levelQuestions[Math.floor(Math.random() * levelQuestions.length)];
-      setCurrentQuestion({ key: randomQuestion.key, data: randomQuestion });
+    // Check if there are more questions
+    if (currentQuestionIndex + 1 < Object.keys(taxQuestions).length) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+  
+      const { level } = currentQuestion.data;
+      if (level) {
+        const levelQuestions = Object.values(taxQuestions).filter(
+          (q) => q.level === level && q.key !== currentQuestion.key
+        );
+        const randomQuestion = levelQuestions[Math.floor(Math.random() * levelQuestions.length)];
+        setCurrentQuestion({ key: randomQuestion.key, data: randomQuestion });
+      } else {
+        setCurrentQuestion(null);
+      }
+  
+      setIsAnswerSubmitted(false);
     } else {
-      setCurrentQuestion(null);
+      // If all questions are completed, reset to the first question
+      setCurrentQuestionIndex(0);
+      const randomQuestion = Object.values(taxQuestions)[Math.floor(Math.random() * Object.keys(taxQuestions).length)];
+      setCurrentQuestion({ key: randomQuestion.key, data: randomQuestion });
+      setIsAnswerSubmitted(false);
     }
-
-    // Reset answer submission status
-    setIsAnswerSubmitted(false);
   };
 
   const renderChoices = () => {
