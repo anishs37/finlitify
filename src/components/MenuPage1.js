@@ -158,6 +158,7 @@ const MenuPage1 = () => {
     
 
       <h2>Tips for Teen Budgeting</h2>
+
       
         <ul>
           <strong>Emergency Fund:</strong> Save a little for unexpected
