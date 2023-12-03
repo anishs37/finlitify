@@ -1,0 +1,26 @@
+h1 {
+    margin-top: 50px;
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+  }
+  p {
+    font-size: 1.2rem;
+    color: white;
+  }
+  .download{
+    color: aliceblue;
+  }
+
+  .about-image {
+    width: 75%; /* Set the width to cover 1/4th of the page */
+    margin: 20px auto; /* Center the image with some margin */
+    display:flex; /* Make sure the image is a block element */
+  }
+  .middle{
+     text-align: center;
+     display: block;
+     
+  }
+  
+ 
