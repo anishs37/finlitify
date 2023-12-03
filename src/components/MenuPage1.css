@@ -10,10 +10,13 @@ h1 {
 }
 
 h2 {
-  color: #555;
+  color: #fcfbfb;
   margin-bottom: 15px;
 }
-
+h3{
+  color: white;
+  margin-bottom: 15px;
+}
 .choices-container {
   display: flex;
   flex-direction: column;
@@ -21,7 +24,7 @@ h2 {
 }
 
 .choice {
-  background-color: #4CAF50;
+  background-color: #e9818e;
   color: white;
   padding: 10px;
   cursor: pointer;
@@ -36,4 +39,23 @@ h2 {
 p {
   margin-top: 20px;
   font-size: 18px;
+}
+
+.choice.selected {
+  background-color: #f9d72c; /* Green or any color you prefer */
+  color: white;
+}
+button { 
+  color: white;
+  background-color: #45a049;
+  height: 40px;
+  width: 100px;
+}
+.answer-feedback{
+  color: white;
+  font-size: large;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.budget-info{
+  color:rgb(227, 255, 127);
 }
