@@ -97,92 +97,21 @@ const MenuPage1 = () => {
 
   return (
     <div className="app">
-      <div className="budget-info">
-      <h2>Financial Basics for All Ages</h2>
-      <h2>Budgeting for Teens: The Basics</h2>
-
-      <h3>What is a Budget?</h3>
-      <p>
-        A budget is like a roadmap for your money. It helps you plan how to spend
-        and save your money wisely. Just like you plan your day or week, a budget
-        helps you plan where your money will go.
-      </p>
-
-      <h3>Why Budget?</h3>
-    
-        <li>
-          <strong>Understand Your Money:</strong> A budget helps you see how
-          much money you have and where it goes.
-        </li>
-        <li>
-          <strong>Reach Goals:</strong> Want a new gadget or save for a trip? A
-          budget helps you save for things you want.
-        </li>
-        <li>
-          <strong>Avoid Money Stress:</strong> Knowing where your money goes
-          reduces stress about spending.
-        </li>
-     
-
-      <h2>How to Create a Teen Budget</h2>
-
-      
-        <li>
-          <strong>Know Your Income:</strong> Allowance, part-time job, gifts –
-          whatever money you get.
-        </li>
-        <li>
-          <strong>List Your Expenses:</strong> What do you spend money on? School
-          lunch, snacks, games, etc.
-        </li>
-        <li>
-          <strong>Set Spending Categories:</strong> Split your expenses into
-          categories like entertainment, food, savings.
-        </li>
-        <li>
-          <strong>Plan and Prioritize:</strong> Allocate money to each category.
-          Plan for your needs first, then wants.
-        </li>
-        <li>
-          <strong>Save Some, Spend Some:</strong> Decide how much you want to
-          save from each income.
-        </li>
-        <li>
-          <strong>Track Your Spending:</strong> Keep track of what you spend.
-          Apps or a simple notebook work.
-        </li>
-        <li>
-          <strong>Adjust as Needed:</strong> If you overspend in one category,
-          adjust the others next time.
-        </li>
-    
-
-      <h2>Tips for Teen Budgeting</h2>
-
-      
-        <ul>
-          <strong>Emergency Fund:</strong> Save a little for unexpected
-          expenses. It's your safety net.
-        </ul>
-        <li>
-          <strong>Think Before You Spend:</strong> Do you really need it? Can
-          it wait? Ask yourself before buying.
-        </li>
-        <li>
-          <strong>Save for Goals:</strong> Want a new phone or a trip with
-          friends? Budget for it.
-        </li>
-        <li>
-          <strong>Involve Your Parents:</strong> They can help you set up and
-          understand your budget.
-        </li>
-    
-
-      <p>
-        Remember, budgeting is a skill, and the more you practice, the better
-        you'll become at managing your money. It's your tool for financial
-        freedom and making smart money choices.
-      </p>
+      <div className='budget-info'>
+      <h2>Tax Tips for College Students</h2>
+      <ul>
+        <li>Choose filing status based on finances.</li>
+        <li>Report job, scholarship, and grant earnings.</li>
+        <li>Utilize tax credits like American Opportunity and Lifetime Learning.</li>
+        <li>Deduct up to $2,500 of student loan interest annually.</li>
+        <li>Explore tax-free growth with Coverdell ESAs and 529 plans.</li>
+        <li>Report Federal Work-Study earnings as taxable income.</li>
+        <li>Check for state-specific education-related credits.</li>
+        <li>Choose the right tax form (1040, 1040A, or 1040EZ).</li>
+        <li>Qualify for free tax preparation services through programs like VITA.</li>
+        <li>Keep accurate records of tuition, scholarships, and expenses.</li>
+        <li>Consult a tax professional for complex situations or eligibility queries.</li>
+      </ul>
     </div>
       <h2>Do you want to test our FinQuiz? </h2>
       {renderGameContent()}
