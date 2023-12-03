@@ -33,7 +33,7 @@ const MenuPage2 = ({ wolframApiKey }) => {
       console.log('response.data', response.data);
 
       const pods = response.data.queryresult.pods;
-      const primaryPod = pods[0];
+      const primaryPod = pods[1];
       const primaryAnswer = primaryPod && primaryPod.subpods[0].plaintext;
   
       setAnswer(primaryAnswer || 'No answer available');
