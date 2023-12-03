@@ -2,12 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './MenuPage2.css'; // Assuming you have a file named 'MenuPage1.css'
 import taxesQuestions from './taxesQuestions'; // Assuming you have a file named 'taxesQuestions.js'
 
+<<<<<<< HEAD
 const MenuPage2 = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
+=======
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Footer from './Footer';
+import axios from 'axios';
+import './MenuPage2.css';
+import './HomePage.css';
+import '../setupProxy.js';
+>>>>>>> 873966b7d6ee9032a1371748a99f9603d6a4f33a
 
   useEffect(() => {
     // Set the initial question when the component mounts
@@ -19,6 +29,7 @@ const MenuPage2 = () => {
     }
   }, [currentQuestionIndex]);
 
+<<<<<<< HEAD
   const handleAnswerClick = (choice) => {
     setSelectedAnswer(choice);
   };
@@ -92,6 +103,35 @@ const MenuPage2 = () => {
           <p>Your final score is: {score}</p>
         </div>
       );
+=======
+  const handleAskQuestion = async () => {
+    try {
+      const encodedQuery = encodeURIComponent(question);
+      const apiKeyV2 = 'HHYEJK-4W4E445VVH'; // Replace with your actual Wolfram Alpha API key
+      const apiKeyV1 = 'HHYEJK-52WQW2A46Q';
+      // const apiUrl = `http://api.wolframalpha.com/v2/query?appid=${apiKey}&input=${encodedQuery}`;
+
+      const baseUrl = 'https://cors-anywhere.herokuapp.com/http://api.wolframalpha.com';
+
+      console.log('encodedQuery', encodedQuery);
+      // const apiUrl = `${baseUrl}/v1/result?appid=${apiKeyV1}&i=${encodedQuery}`
+      const apiUrl = `${baseUrl}/v2/query?input=${encodedQuery}&appid=${apiKeyV2}&output=json`
+      
+      console.log('apiUrl', apiUrl);
+  
+      const response = await axios.get(apiUrl);
+  
+      console.log('response', response);
+      console.log('response.data', response.data);
+
+      const pods = response.data.queryresult.pods;
+      const primaryPod = pods[0];
+      const primaryAnswer = primaryPod && primaryPod.subpods[0].plaintext;
+  
+      setAnswer(primaryAnswer || 'No answer available');
+    } catch (error) {
+      console.error('Error fetching data from Wolfram Alpha:', error);
+>>>>>>> 873966b7d6ee9032a1371748a99f9603d6a4f33a
     }
   };
 
