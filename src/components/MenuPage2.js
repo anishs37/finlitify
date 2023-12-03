@@ -15,7 +15,7 @@ const MenuPage2 = ({ wolframApiKey }) => {
     try {
       const encodedQuery = encodeURIComponent(question);
       const apiKey = 'HHYEJK-4W4E445VVH'; // Replace with your actual Wolfram Alpha API key
-      const apiUrl = `https://cors-anywhere.herokuapp.com/http://api.wolframalpha.com/v2/query?appid=${apiKey}&input=${encodedQuery}`;
+      const apiUrl = `https://cors-anywhere.herokuapp.com/http://api.wolframalpha.com/v2/query?appid=${apiKey}&input=${encodedQuery}&output=json`;
   
       const response = await axios.get(apiUrl);
   
