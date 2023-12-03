@@ -19,6 +19,7 @@ h3{
 }
 .choices-container {
   display: flex;
+  width: 100px;
   flex-direction: column;
   gap: 10px;
 }
