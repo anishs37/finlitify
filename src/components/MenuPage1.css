@@ -1,152 +1,39 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* MenuPage1.css */
+
+.app {
   text-align: center;
-}
-.submit-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  font-size: 16px;
-  border-radius: 5px;
-  margin: 10px;
-  cursor: pointer;
-}
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column-reverse;
-  }
-
-  .submit-button {
-    margin-top: 10px;
-  }
-}
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .questions-container {
-    width: 90%;
-  }
-}
-
-.back-button {
-  margin-bottom: 20px;
-  width: auto; /* Allow the button to adjust its widtbased on content */
-  padding: 10px 20px;
-  height: 30px; 
-  align-items: center;
-}
-
-.back-link {
-  text-decoration: none;
-  color: inherit;
+  padding: 20px;
 }
 
 h1 {
-  margin-top: 50px;
-  font-size: 2.5rem;
-  text-align: center;
-  color: white;
+  color: #333;
 }
 
-p {
-  font-size: 1.2rem;
-  text-align: center;
-  color: white;
+h2 {
+  color: #555;
+  margin-bottom: 15px;
 }
 
-.questions-container {
+.choices-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 10px;
 }
 
-.question-container {
-  margin-top: 20px;
-  width: 500px;
-  color: #4935ddbf;
-  border-radius: 5px;
+.choice {
+  background-color: #4CAF50;
+  color: white;
   padding: 10px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.question {
-  font-weight: bold;
+.choice:hover {
+  background-color: #45a049;
 }
 
-.answer {
-  margin-top: 10px;
+/* Additional styles for the "Game Over" message */
+p {
+  margin-top: 20px;
+  font-size: 18px;
 }
-
-.footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 8px;
-  text-align: center;
-}
-
-.size-note {
-  font-size: medium;
-}
-
-.size-footer {
-  font-size: small;
-}
-  .submit-button:hover {
-    background-color:red;
-  }
-  .middle { 
-    text-align: center;
-    width: 500px;
-  }
-  
-  /* MenuPage1.css */
-
-/* Style for the container */
-
-/* Style for the file input */
-input[type="file"] {
-  display:inline;
-  width: auto;
-  height:auto; /* Hide the default file input */
-  text-decoration-color: aliceblue;
-}
-
-/* Style for the input element */
-/* Style for the input element */
-/* Style for the textarea element */
-textarea {
-  width: 200px; /* Initial predefined width */
-  min-width: 200px; /* Ensure it doesn't shrink below the initial width */
-  height: 10px; /* Let the height adjust automatically based on content */
-  padding-top: 30px; /* Adjust padding as needed for spacing */
-  font-size: 16px; /* Adjust font size as needed */
-  border: 1px solid #ccc; /* Add a border if desired */
-   /* Add border radius for rounded corners *
-  justify-content: center;/* Remove the default outline when focused */
-  /* Add any other styles you want */
-}
-button {
-  /* Adjust padding as needed */
-  font-size: 14px; /* Adjust font size as needed */
-  margin-top: 10px; /* Adjust margin as needed */
-  border: 1px solid #ccc; /* Add a border if desired */
-  border-radius: 5px; /* Add border radius for rounded corners */
-  cursor: pointer;
-  width: auto;
-  height: auto;
-  /* Add any other styles you want */
-}
-/* Style for the custom upload button */
-/* Style for the custom upload button on hover */
-

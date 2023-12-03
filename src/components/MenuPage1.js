@@ -1,37 +1,66 @@
-//import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Footer from './Footer.js';
-import './MenuPage2.css';
-import './HomePage.css';
-//import axios from 'axios';
-
+// App.js
+import React, { useState, useEffect } from 'react';
+import './MenuPage1.css';
+import questions from './questions';  // Assuming you have a file named 'questions.js'
 
 const MenuPage1 = () => {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(null);
+
+  useEffect(() => {
+    // Set the initial question when the component mounts
+    if (currentQuestionIndex < Object.keys(questions).length) {
+      const currentQuestionKey = Object.keys(questions)[currentQuestionIndex];
+      setCurrentQuestion({ key: currentQuestionKey, data: questions[currentQuestionKey] });
+    }
+  }, [currentQuestionIndex]);
+
+  const handleAnswerClick = (selectedAnswer) => {
+    const [, , correctAnswer] = currentQuestion.data;
+
+    if (selectedAnswer === correctAnswer) {
+      setScore(score + 1);
+    }
+
+    // Move to the next question
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+  };
+
+  const renderChoices = () => {
+    const [, choices] = currentQuestion.data;
+
+    return choices.map((choice, index) => (
+      <div key={index} className="choice" onClick={() => handleAnswerClick(choice)}>
+        {choice}
+      </div>
+    ));
+  };
+
+  const renderGameContent = () => {
+    if (currentQuestion) {
+      return (
+        <div>
+          <h2>{currentQuestion.key}</h2>
+          <div className="choices-container">{renderChoices()}</div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h2>Game Over</h2>
+          <p>Your final score is: {score}</p>
+        </div>
+      );
+    }
+  };
 
   return (
-    <div className="container">
-      <button className="back-button">
-        <Link to="/" className="back-link">
-          Back to Home
-        </Link>
-      </button>
-      <h1>Budgeting Tips Menu</h1>
-      <div className="menu-options">
-        <Link to="/menu/introduction" className="menu-item">
-          Introduction to Budgeting
-        </Link>
-        <Link to="/menu/planning" className="menu-item">
-          Budget Planning
-        </Link>
-        <Link to="/menu/expenses" className="menu-item">
-          Managing Expenses
-        </Link>
-        <Link to="/menu/saving" className="menu-item">
-          Saving Strategies
-        </Link>
-      </div>
-      <Footer />
+    <div className="app">
+      <h1>Trivia Game</h1>
+      {renderGameContent()}
     </div>
   );
 };
+
 export default MenuPage1;

@@ -1,12 +1,34 @@
-//import React, { useState, useEffect } from 'react';
+// MenuPage2.js
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Footer from './Footer.js';
+import Footer from './Footer';
+import axios from 'axios';
 import './MenuPage2.css';
 import './HomePage.css';
-//import axios from 'axios';
 
+const MenuPage2 = ({ wolframApiKey }) => {
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
 
-const MenuPage2 = () => {
+  const handleAskQuestion = async () => {
+    try {
+      const encodedQuery = encodeURIComponent(question);
+      const apiKey = 'HHYEJK-4W4E445VVH'; // Replace with your actual Wolfram Alpha API key
+      const apiUrl = `http://api.wolframalpha.com/v2/query?appid=${apiKey}&input=${encodedQuery}`;
+  
+      const response = await axios.get(apiUrl);
+  
+      const pods = response.data.queryresult.pods;
+      const primaryPod = pods[0];
+      const primaryAnswer = primaryPod && primaryPod.subpods[0].plaintext;
+  
+      setAnswer(primaryAnswer || 'No answer available');
+    } catch (error) {
+      console.error('Error fetching data from Wolfram Alpha:', error);
+    }
+  };
+  
 
   return (
     <div className="container">
@@ -30,8 +52,19 @@ const MenuPage2 = () => {
           Saving Strategies
         </Link>
       </div>
+      <div className="wolfram-section">
+        <input
+          type="text"
+          placeholder="Ask a question"
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+        />
+        <button onClick={handleAskQuestion}>Ask</button>
+        <div className="answer">{answer}</div>
+      </div>
       <Footer />
     </div>
   );
 };
+
 export default MenuPage2;
