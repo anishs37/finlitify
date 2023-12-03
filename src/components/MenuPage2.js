@@ -1,3 +1,4 @@
+// MenuPage2.js
 
 import React, { useState, useEffect } from 'react';
 import './MenuPage1.css'; // Assuming you have a file named 'MenuPage1.css'
