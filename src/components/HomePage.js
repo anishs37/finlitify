@@ -36,11 +36,6 @@ const HomePage = () => {
       <p>
         This is the home page. Click on the links below to navigate to the other pages.
       </p>
-      <div className="about">
-        <Link to="/about" className="about-link">
-          About
-        </Link>
-      </div>
         <div className="menu">
           <Link to="/menu1" className="menu-item menu1 center-text">
             Budgeting Tips
