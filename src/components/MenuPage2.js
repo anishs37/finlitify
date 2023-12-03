@@ -2,14 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './MenuPage2.css'; // Assuming you have a file named 'MenuPage1.css'
 import taxesQuestions from './taxesQuestions'; // Assuming you have a file named 'taxesQuestions.js'
 
-<<<<<<< HEAD
-const MenuPage2 = () => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [score, setScore] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [currentQuestion, setCurrentQuestion] = useState(null);
-  const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
-=======
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
@@ -17,7 +9,6 @@ import axios from 'axios';
 import './MenuPage2.css';
 import './HomePage.css';
 import '../setupProxy.js';
->>>>>>> 873966b7d6ee9032a1371748a99f9603d6a4f33a
 
   useEffect(() => {
     // Set the initial question when the component mounts
@@ -29,81 +20,6 @@ import '../setupProxy.js';
     }
   }, [currentQuestionIndex]);
 
-<<<<<<< HEAD
-  const handleAnswerClick = (choice) => {
-    setSelectedAnswer(choice);
-  };
-
-  const handleNextButtonClick = () => {
-    const { choices, correctAnswer, level } = currentQuestion.data;
-
-    // Check if the selected answer is correct
-    const isCorrect = selectedAnswer === correctAnswer;
-
-    if (isCorrect) {
-      setScore(score + 1);
-    }
-
-    // Show answer submission status
-    setIsAnswerSubmitted(true);
-  };
-
-  const handleNextQuestion = () => {
-    // Move to the next question
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
-
-    // If there is a next question at the same level, show it
-    const { level } = currentQuestion.data;
-    if (level) {
-      const levelQuestions = Object.values(taxesQuestions).filter((q) => q.level === level && q.key !== currentQuestion.key);
-      const randomQuestion = levelQuestions[Math.floor(Math.random() * levelQuestions.length)];
-      setCurrentQuestion({ key: randomQuestion.key, data: randomQuestion });
-    } else {
-      setCurrentQuestion(null);
-    }
-
-    // Reset answer submission status
-    setIsAnswerSubmitted(false);
-  };
-
-  const renderChoices = () => {
-    const { choices } = currentQuestion.data;
-
-    return choices.map((choice, index) => (
-      <div
-        key={index}
-        className={`choice ${selectedAnswer === choice ? 'selected' : ''}`}
-        onClick={() => handleAnswerClick(choice)}
-      >
-        {choice}
-      </div>
-    ));
-  };
-
-  const renderGameContent = () => {
-    if (currentQuestion) {
-      const { key } = currentQuestion;
-      return (
-        <div>
-          <h3>{key}</h3>
-          <div className="choices-container">{renderChoices()}</div>
-          <button onClick={handleNextButtonClick}>Submit</button>
-          {isAnswerSubmitted && (
-            <div className="answer-feedback">
-              {selectedAnswer === currentQuestion.data.correctAnswer ? 'Right!' : 'Wrong!'}
-            </div>
-          )}
-          {isAnswerSubmitted && <button onClick={handleNextQuestion}>Next</button>}
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <h2>Game Over</h2>
-          <p>Your final score is: {score}</p>
-        </div>
-      );
-=======
   const handleAskQuestion = async () => {
     try {
       const encodedQuery = encodeURIComponent(question);
@@ -131,7 +47,6 @@ import '../setupProxy.js';
       setAnswer(primaryAnswer || 'No answer available');
     } catch (error) {
       console.error('Error fetching data from Wolfram Alpha:', error);
->>>>>>> 873966b7d6ee9032a1371748a99f9603d6a4f33a
     }
   };
 
