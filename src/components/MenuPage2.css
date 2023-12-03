@@ -1,86 +1,61 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .back-button {
-    margin-bottom: 20px;
-  }
-  
-  .back-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  h1 {
-    margin-top: 50px;
-    font-size: 2.5rem;
-    text-align: center;
-    color: white;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    text-align: center;
-    color: white;
-  }
-  
-  .questions-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .question-container {
-    margin-top: 20px;
-    width: 500px;
-    background-color: #6760e93f;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .question {
-    font-weight: bold;
-    color:red;
-  }
-  
-  .answer {
-    margin-top: 10px;
-    color: white;
-  }
-  
-  .footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .size-note {
-    font-size: medium;
-  }
-  
-  .size-footer {
-    font-size: small;
-  }
-  
-  @media screen and (max-width: 600px) {
-    h1 {
-      font-size: 2rem;
-    }
-  
-    p {
-      font-size: 1rem;
-    }
+/* MenuPage1.css */
 
-  
-  }
-  input[type="file"] {
-    display:inline; /* Hide the default file input */
-  }
-  
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #fcfbfb;
+  margin-bottom: 15px;
+}
+h3{
+  color: white;
+  margin-bottom: 15px;
+}
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choice {
+  background-color: #e9818e;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.choice:hover {
+  background-color: #45a049;
+}
+
+/* Additional styles for the "Game Over" message */
+p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.choice.selected {
+  background-color: #f9d72c; /* Green or any color you prefer */
+  color: white;
+}
+button { 
+  color: white;
+  background-color: #45a049;
+  height: 40px;
+  width: 100px;
+}
+.answer-feedback{
+  color: white;
+  font-size: large;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.tax-info{
+  color:rgb(227, 255, 127);
+}
