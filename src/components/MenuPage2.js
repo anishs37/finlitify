@@ -6,6 +6,7 @@ import Footer from './Footer';
 import axios from 'axios';
 import './MenuPage2.css';
 import './HomePage.css';
+import '../setupProxy.js';
 
 const MenuPage2 = ({ wolframApiKey }) => {
   const [question, setQuestion] = useState('');
@@ -14,11 +15,23 @@ const MenuPage2 = ({ wolframApiKey }) => {
   const handleAskQuestion = async () => {
     try {
       const encodedQuery = encodeURIComponent(question);
-      const apiKey = 'HHYEJK-4W4E445VVH'; // Replace with your actual Wolfram Alpha API key
-      const apiUrl = `http://api.wolframalpha.com/v2/query?appid=${apiKey}&input=${encodedQuery}`;
+      const apiKeyV2 = 'HHYEJK-4W4E445VVH'; // Replace with your actual Wolfram Alpha API key
+      const apiKeyV1 = 'HHYEJK-52WQW2A46Q';
+      // const apiUrl = `http://api.wolframalpha.com/v2/query?appid=${apiKey}&input=${encodedQuery}`;
+
+      const baseUrl = 'https://cors-anywhere.herokuapp.com/http://api.wolframalpha.com';
+
+      console.log('encodedQuery', encodedQuery);
+      // const apiUrl = `${baseUrl}/v1/result?appid=${apiKeyV1}&i=${encodedQuery}`
+      const apiUrl = `${baseUrl}/v2/query?input=${encodedQuery}&appid=${apiKeyV2}&output=json`
+      
+      console.log('apiUrl', apiUrl);
   
       const response = await axios.get(apiUrl);
   
+      console.log('response', response);
+      console.log('response.data', response.data);
+
       const pods = response.data.queryresult.pods;
       const primaryPod = pods[0];
       const primaryAnswer = primaryPod && primaryPod.subpods[0].plaintext;
