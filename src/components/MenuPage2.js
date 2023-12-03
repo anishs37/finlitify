@@ -1,3 +1,4 @@
+// MenuPage2.js
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -6,7 +7,6 @@ import './MenuPage2.css';
 import './HomePage.css';
 
 const MenuPage2 = ({}) => {
-
   
 
   return (
