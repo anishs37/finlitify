@@ -7,9 +7,9 @@ import './HomePage.css'; // Import the separate CSS file
 const HomePage = () => {
   return (
     <div className="container">
-      <h1>Welcome !!</h1>
+      <h1>Welcome to FinLitify!</h1>
       <p>
-        This is an app
+        This is the home page. Click on the links below to navigate to the other pages.
       </p>
       <div className="about">
         <Link to="/about" className="about-link">
@@ -18,13 +18,13 @@ const HomePage = () => {
       </div>
         <div className="menu">
           <Link to="/menu1" className="menu-item menu1 center-text">
-            Budgeting tips
+            Budgeting Tips
           </Link>
           <Link to="/menu2" className="menu-item menu2 center-text">
-            Taxes tips
+            Taxes Tips
           </Link>
           <Link to="/menu3" className="menu-item menu3 center-text">
-            Savings tips
+            Savings Tips
           </Link>
         </div>
       <Footer />
