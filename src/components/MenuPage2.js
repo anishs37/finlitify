@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import './MenuPage1.css'; // Assuming you have a file named 'MenuPage1.css'
 import taxQuestions from './taxQuestions'; // Assuming you have a file named 'taxQuestions.js'
@@ -118,5 +119,5 @@ const MenuPage1 = () => {
     </div>
   );
 };
+export default MenuPage2;
 
-export default MenuPage1;
