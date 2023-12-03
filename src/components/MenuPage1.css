@@ -42,6 +42,7 @@
   width: auto; /* Allow the button to adjust its widtbased on content */
   padding: 10px 20px;
   height: 30px; 
+  align-items: center;
 }
 
 .back-link {
