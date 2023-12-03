@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './MenuPage1.css'; // Assuming you have a file named 'MenuPage1.css'
 import taxQuestions from './taxQuestions'; // Assuming you have a file named 'taxQuestions.js'
 
-const MenuPage1 = () => {
+const MenuPage2 = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
